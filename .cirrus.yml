@@ -1,23 +1,21 @@
 env:
-    MANIFEST: https://github.com/PixelExperience/manifest.git -b twelve-plus
-    DEVICE: evergo
+    MANIFEST: https://github.com/RisingTechOSS/android.git -b thirteen
+    DEVICE: everpal
     OEM: xiaomi
-    DT_LINK: https://github.com/mmtrt/device_xiaomi_evergo.git -b mix
+    DT_LINK: https://github.com/weaponmasterjax/device_xiaomi_everpal.git -b mix
     DT_PATH: device/$OEM/$DEVICE
-    VT_LINK: https://gitlab.com/mmtrt/vendor_xiaomi_evergo.git
+    VT_LINK: https://github.com/weaponmasterjax/vendor_xiaomi_everpal.git
     VT_PATH: vendor/$OEM/$DEVICE
-    # KT_LINK: https://github.com/Xiaomi-MT6833/kernel_xiaomi_evergo.git
-    KT_LINK: https://github.com/PixelExperience-Devices/kernel_redmi_rosemary.git
-    EKT_LINK: https://github.com/Xiaomi-MT6833/kernel_xiaomi_evergo.git -b eleven
-    EKT_PATH: kernel_xiaomi_evergo
-    SE_LINK: https://github.com/PixelExperience/device_mediatek_sepolicy_vndr.git -b twelve
+    EKT_LINK: https://github.com/Xiaomi-MT6833/device_xiaomi_everpal-kernel.git
+    EKT_PATH: device/xiaomi/everpal-kernel
+    SE_LINK: https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr.git -b lineage-20
     SE_PATH: device/mediatek/sepolicy_vndr
-    PLATFORM: evergo
+    PLATFORM: everpal
     KT_PATH: kernel/$OEM/$PLATFORM
     TARGET: bacon
     EXTRA_CMD: export SKIP_ABI_CHECKS=true
     LUNCH_COMBO: aosp_${DEVICE}-userdebug
-    OUTPUT: PixelExperience*.zip
+    OUTPUT: rising_everpal.zip
 
 task:
   name: "Setting Up, Syncing, Building and Uploading..."
