@@ -6,6 +6,7 @@ env:
     DT_PATH: device/$OEM/$DEVICE
     VT_LINK: https://github.com/weaponmasterjax/vendor_xiaomi_everpal.git
     VT_PATH: vendor/$OEM/$DEVICE
+    KT_LINK: https://github.com/jignesh2023/kernel_xiaomi_everpal.git
     EKT_LINK: https://github.com/Xiaomi-MT6833/device_xiaomi_everpal-kernel.git
     EKT_PATH: device/xiaomi/everpal-kernel
     SE_LINK: https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr.git -b lineage-20
