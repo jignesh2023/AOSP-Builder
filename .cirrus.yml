@@ -2,11 +2,11 @@ env:
     MANIFEST: https://github.com/RisingTechOSS/android.git -b thirteen
     DEVICE: everpal
     OEM: xiaomi
-    DT_LINK: https://github.com/weaponmasterjax/device_xiaomi_everpal.git -b mix
+    DT_LINK: https://github.com/jignesh2023/device_xiaomi_everpal -b risingos
     DT_PATH: device/$OEM/$DEVICE
     VT_LINK: https://github.com/weaponmasterjax/vendor_xiaomi_everpal.git
     VT_PATH: vendor/$OEM/$DEVICE
-    KT_LINK: https://github.com/jignesh2023/kernel_xiaomi_everpal.git
+    KT_LINK: https://github.com/weaponmasterjax/device_xiaomi_everpal-kernel
     EKT_LINK: https://github.com/Xiaomi-MT6833/device_xiaomi_everpal-kernel.git
     EKT_PATH: device/xiaomi/everpal-kernel
     SE_LINK: https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr.git -b lineage-20
@@ -15,7 +15,7 @@ env:
     KT_PATH: kernel/$OEM/$PLATFORM
     TARGET: bacon
     EXTRA_CMD: export SKIP_ABI_CHECKS=true
-    LUNCH_COMBO: aosp_${DEVICE}-userdebug
+    LUNCH_COMBO: lineage_${DEVICE}-userdebug
     OUTPUT: rising_everpal.zip
 
 task:
@@ -76,7 +76,7 @@ task:
       - export CCACHE_EXEC=/usr/bin/ccache
       - ccache -M 50G
       - . build/envsetup.sh
-      - sed -i 's/rosemary/evergo/g' device/xiaomi/evergo/BoardConfig.mk
+      - sed -i 's/rosemary/evergo/g' device/xiaomi/everpal/BoardConfig.mk
       - lunch "$LUNCH_COMBO"
       - mka -j31 $TARGET
      
